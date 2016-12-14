@@ -46,50 +46,38 @@ public class patient_action {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JButton btnNewButton = new JButton("\u9884\u7EA6");
-		btnNewButton.addMouseListener(new MouseAdapter() {
+		JButton order_btn = new JButton("é¢„çº¦");
+		order_btn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				frame.dispose();
 				patient_order.main(null);
 			}
 		});
-		btnNewButton.addActionListener(new ActionListener() {
+		order_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				
 			}
 		});
-		btnNewButton.setFont(new Font("ËÎÌå", Font.PLAIN, 18));
-		btnNewButton.setBounds(162, 54, 93, 44);
-		frame.getContentPane().add(btnNewButton);
+		order_btn.setFont(new Font("ï¿½ï¿½ï¿½ï¿½", Font.PLAIN, 18));
+		order_btn.setBounds(117, 87, 181, 44);
+		frame.getContentPane().add(order_btn);
 		
-		JButton btnNewButton_1 = new JButton("\u6302\u53F7");
-		btnNewButton_1.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				frame.dispose();
-				guahao_keshi.main(null);
-			}
-		});
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton logout_btn = new JButton("é€€å‡º");
+		logout_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_1.setFont(new Font("ËÎÌå", Font.PLAIN, 18));
-		btnNewButton_1.setBounds(162, 132, 93, 44);
-		frame.getContentPane().add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("\u9000\u51FA");
-		btnNewButton_2.addMouseListener(new MouseAdapter() {
+		logout_btn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				frame.dispose();
 				java_Home.java_Home.main(null);
 			}
 		});
-		btnNewButton_2.setBounds(162, 213, 93, 23);
-		frame.getContentPane().add(btnNewButton_2);
+		logout_btn.setBounds(162, 213, 93, 23);
+		frame.getContentPane().add(logout_btn);
 	}
 
 }

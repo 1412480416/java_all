@@ -6,6 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class success {
 
@@ -43,11 +46,19 @@ public class success {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("\u9884\u7EA6\u6210\u529F\uFF01");
-		lblNewLabel.setFont(new Font("ËÎÌå", Font.PLAIN, 32));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(86, 78, 274, 75);
-		frame.getContentPane().add(lblNewLabel);
+		JLabel order_success = new JLabel("é¢„çº¦æˆåŠŸï¼");
+		order_success.setFont(new Font("ï¿½ï¿½ï¿½ï¿½", Font.PLAIN, 32));
+		order_success.setHorizontalAlignment(SwingConstants.CENTER);
+		order_success.setBounds(86, 78, 274, 75);
+		frame.getContentPane().add(order_success);
+		
+		JButton logout_btn = new JButton("é€€å‡º");
+		logout_btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		logout_btn.setBounds(162, 175, 93, 23);
+		frame.getContentPane().add(logout_btn);
 	}
 
 }

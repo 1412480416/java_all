@@ -15,8 +15,8 @@ import javax.swing.JPanel;
 public class patient_login {
 
 	private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField account_text;
+	private JTextField password_text;
 
 	/**
 	 * Launch the application.
@@ -50,30 +50,30 @@ public class patient_login {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("\u5E10\u53F7\uFF1A");
-		lblNewLabel.setBounds(75, 55, 54, 15);
-		frame.getContentPane().add(lblNewLabel);
+		JLabel account_label = new JLabel("帐号:");
+		account_label.setBounds(75, 55, 54, 15);
+		frame.getContentPane().add(account_label);
 		
-		JLabel lblNewLabel_1 = new JLabel("\u5BC6\u7801\uFF1A");
-		lblNewLabel_1.setBounds(75, 104, 54, 15);
-		frame.getContentPane().add(lblNewLabel_1);
+		JLabel password_label = new JLabel("密码:");
+		password_label.setBounds(75, 104, 54, 15);
+		frame.getContentPane().add(password_label);
 		
-		textField = new JTextField();
-		textField.setBounds(150, 52, 134, 21);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
+		account_text = new JTextField();
+		account_text.setBounds(150, 52, 134, 21);
+		frame.getContentPane().add(account_text);
+		account_text.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(150, 101, 134, 21);
-		frame.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
+		password_text = new JTextField();
+		password_text.setBounds(150, 101, 134, 21);
+		frame.getContentPane().add(password_text);
+		password_text.setColumns(10);
 		
-		JButton btnNewButton = new JButton("\u6CE8\u518C");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton Register_btn = new JButton("\u6CE8\u518C");
+		Register_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton.addMouseListener(new MouseAdapter() {
+		Register_btn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				frame.dispose();
@@ -82,33 +82,38 @@ public class patient_login {
 				
 			}
 		});
-		btnNewButton.setBounds(105, 182, 93, 23);
-		frame.getContentPane().add(btnNewButton);
+		Register_btn.setBounds(105, 182, 93, 23);
+		frame.getContentPane().add(Register_btn);
 		
-		JButton btnNewButton_1 = new JButton("\u767B\u5F55");
-		btnNewButton_1.addMouseListener(new MouseAdapter() {
+		JButton login_btn = new JButton("登录");
+		login_btn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				System.out.println(account_text.getText());
 				frame.dispose();
 				patient_action.main(null);
 			}
 		});
-		btnNewButton_1.addActionListener(new ActionListener() {
+		login_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_1.setBounds(244, 182, 93, 23);
-		frame.getContentPane().add(btnNewButton_1);
+		login_btn.setBounds(244, 182, 93, 23);
+		frame.getContentPane().add(login_btn);
 		
-		JButton btnNewButton_2 = new JButton("\u8FD4\u56DE");
-		btnNewButton_2.addMouseListener(new MouseAdapter() {
+		JButton Return_btn = new JButton("返回");
+		Return_btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		Return_btn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				frame.dispose();
 				java_Home.java_Home.main(null);
 			}
 		});
-		btnNewButton_2.setBounds(10, 10, 93, 23);
-		frame.getContentPane().add(btnNewButton_2);
+		Return_btn.setBounds(10, 10, 93, 23);
+		frame.getContentPane().add(Return_btn);
 	}
 }

@@ -10,12 +10,13 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class patient_order {
 
 	private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField order_time_text;
 
 	/**
 	 * Launch the application.
@@ -49,37 +50,36 @@ public class patient_order {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("\u9884\u7EA6\u79D1\u5BA4\uFF1A");
-		lblNewLabel.setBounds(77, 38, 67, 15);
-		frame.getContentPane().add(lblNewLabel);
+		JLabel order_keshi_label = new JLabel("预约科室：");
+		order_keshi_label.setBounds(77, 38, 67, 15);
+		frame.getContentPane().add(order_keshi_label);
 		
-		JLabel lblNewLabel_1 = new JLabel("\u9884\u7EA6\u65F6\u95F4\uFF1A");
-		lblNewLabel_1.setBounds(77, 89, 67, 15);
-		frame.getContentPane().add(lblNewLabel_1);
+		JLabel order_time_label = new JLabel("预约时间：");
+		order_time_label.setBounds(77, 89, 67, 15);
+		frame.getContentPane().add(order_time_label);
 		
-		textField = new JTextField();
-		textField.setBounds(154, 35, 114, 21);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
+		order_time_text = new JTextField();
+		order_time_text.setBounds(154, 86, 133, 21);
+		frame.getContentPane().add(order_time_text);
+		order_time_text.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(154, 86, 114, 21);
-		frame.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
-		
-		JButton btnNewButton = new JButton("\u8FD4\u56DE");
-		btnNewButton.addMouseListener(new MouseAdapter() {
+		JButton Return_btn = new JButton("返回");
+		Return_btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		Return_btn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				frame.dispose();
 				patient_action.main(null);
 			}
 		});
-		btnNewButton.setBounds(90, 181, 93, 23);
-		frame.getContentPane().add(btnNewButton);
+		Return_btn.setBounds(90, 181, 93, 23);
+		frame.getContentPane().add(Return_btn);
 		
-		JButton btnNewButton_1 = new JButton("\u786E\u5B9A");
-		btnNewButton_1.addMouseListener(new MouseAdapter() {
+		JButton confirm_btn = new JButton("确定");
+		confirm_btn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				frame.dispose();
@@ -87,12 +87,21 @@ public class patient_order {
 				
 			}
 		});
-		btnNewButton_1.addActionListener(new ActionListener() {
+		confirm_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_1.setBounds(241, 181, 93, 23);
-		frame.getContentPane().add(btnNewButton_1);
+		confirm_btn.setBounds(241, 181, 93, 23);
+		frame.getContentPane().add(confirm_btn);
+		
+		JComboBox order_keshi_cb = new JComboBox();
+		order_keshi_cb.setModel(new DefaultComboBoxModel(new String[] {"脑残科", "妇产科", "皮肤科"}));
+		order_keshi_cb.setBounds(154, 35, 133, 21);
+		frame.getContentPane().add(order_keshi_cb);
+		
+		JLabel geshi_label = new JLabel("格式：年/月/日");
+		geshi_label.setBounds(288, 89, 146, 15);
+		frame.getContentPane().add(geshi_label);
 	}
 
 }
